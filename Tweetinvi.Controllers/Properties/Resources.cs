@@ -275,24 +275,19 @@ namespace Tweetinvi.Controllers.Properties
         public static string List_CheckSubscriber = "https://api.twitter.com/1.1/lists/subscribers/show.json";
 
         /// <summary>
-        ///   Looks up a localized string similar to https://api.twitter.com/1.1/direct_messages/destroy.json?id={0}.
+        ///   Looks up a localized string similar to https://api.twitter.com/1.1/direct_messages/events/destroy.json?id={0}.
         /// </summary>
-        public static string Message_DestroyMessage = "https://api.twitter.com/1.1/direct_messages/destroy.json?id={0}";
+        public static string Message_DestroyMessage = "https://api.twitter.com/1.1/direct_messages/events/destroy.json?id={0}";
 
         /// <summary>
-        ///   Looks up a localized string similar to https://api.twitter.com/1.1/direct_messages.json?count={0}.
+        ///   Looks up a localized string similar to https://api.twitter.com/1.1/direct_messages/events/list.json?count={0}.
         /// </summary>
-        public static string Message_GetMessagesReceived = "https://api.twitter.com/1.1/direct_messages.json?count={0}";
+        public static string Message_GetMessages = "https://api.twitter.com/1.1/direct_messages/events/list.json?count={0}";
 
         /// <summary>
-        ///   Looks up a localized string similar to https://api.twitter.com/1.1/direct_messages/sent.json?count={0}.
+        ///   Looks up a localized string similar to https://api.twitter.com/1.1/direct_messages/events/new.json.
         /// </summary>
-        public static string Message_GetMessagesSent = "https://api.twitter.com/1.1/direct_messages/sent.json?count={0}";
-
-        /// <summary>
-        ///   Looks up a localized string similar to https://api.twitter.com/1.1/direct_messages/new.json?text={0}&amp;{1}.
-        /// </summary>
-        public static string Message_NewMessage = "https://api.twitter.com/1.1/direct_messages/new.json?text={0}&{1}";
+        public static string Message_NewMessage = "https://api.twitter.com/1.1/direct_messages/events/new.json";
 
         /// <summary>
         ///   Looks up a localized string similar to &amp;count={0}.
@@ -335,6 +330,11 @@ namespace Tweetinvi.Controllers.Properties
         public static string QueryParameter_TrimUser = "&trim_user={0}";
 
         /// <summary>
+        ///   Looks up a localized string similar to &amp;cursor={0}.
+        /// </summary>
+        public static string QueryParameter_Cursor = "&cursor={0}";
+
+        /// <summary>
         ///   Looks up a localized string similar to https://api.twitter.com/1.1/saved_searches/destroy/{0}.json.
         /// </summary>
         public static string SavedSearch_Destroy = "https://api.twitter.com/1.1/saved_searches/destroy/{0}.json";
@@ -355,9 +355,9 @@ namespace Tweetinvi.Controllers.Properties
         public static string Search_SearchUsers = "https://api.twitter.com/1.1/users/search.json";
 
         /// <summary>
-        ///   Looks up a localized string similar to {0}%2C{1}%2C{2}{3}.
+        ///   Looks up a localized string similar to {0},{1},{2}{3}.
         /// </summary>
-        public static string SearchParameter_GeoCode = "{0}%2C{1}%2C{2}{3}";
+        public static string SearchParameter_GeoCode = "{0},{1},{2}{3}";
 
         /// <summary>
         ///   Looks up a localized string similar to &amp;lang={0}.

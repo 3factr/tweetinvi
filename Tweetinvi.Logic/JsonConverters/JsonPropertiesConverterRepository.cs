@@ -4,7 +4,9 @@ using Newtonsoft.Json;
 using Tweetinvi.Core.Exceptions;
 using Tweetinvi.Core.Extensions;
 using Tweetinvi.Core.Models;
+using Tweetinvi.Core.Public.Models.Interfaces.DTO.Webhooks;
 using Tweetinvi.Logic.DTO;
+using Tweetinvi.Logic.DTO.ActivityStream;
 using Tweetinvi.Logic.Exceptions;
 using Tweetinvi.Logic.Model;
 using Tweetinvi.Logic.TwitterEntities;
@@ -37,7 +39,6 @@ namespace Tweetinvi.Logic.JsonConverters
                 new JsonInterfaceToObjectConverter<ITwitterListDTO, TwitterListDTO>(),
                 new JsonInterfaceToObjectConverter<IOEmbedTweetDTO, OEmbedTweetDTO>(),
                 new JsonInterfaceToObjectConverter<IUserDTO, UserDTO>(),
-                new JsonInterfaceToObjectConverter<IMessageDTO, MessageDTO>(),
                 new JsonInterfaceToObjectConverter<IUploadedMediaInfo, UploadedMediaInfo>(),
                 new JsonInterfaceToObjectConverter<IUploadProcessingError, UploadProcessingError>(),
 
@@ -86,6 +87,35 @@ namespace Tweetinvi.Logic.JsonConverters
                 // because Twitter does not provide the coordinates the same way if it is a list or
                 // if it is a single argument.
                 new JsonCoordinatesConverter(),
+
+                new JsonInterfaceToObjectConverter<IQuickReplyOption, QuickReplyOption>(),
+                new JsonInterfaceToObjectConverter<IQuickReplyDTO, QuickReplyDTO>(),
+                new JsonInterfaceToObjectConverter<IApp, App>(),
+                new JsonInterfaceToObjectConverter<IEventInitiatedViaDTO, EventInitiatedViaDTO>(),
+                new JsonInterfaceToObjectConverter<IMessageDataDTO, MessageDataDTO>(),
+                new JsonInterfaceToObjectConverter<IQuickReplyResponse, QuickReplyResponse>(),
+                new JsonInterfaceToObjectConverter<IMessageCreateTargetDTO, MessageCreateTargetDTO>(),
+                new JsonInterfaceToObjectConverter<IEventDTO, EventDTO>(),
+                new JsonInterfaceToObjectConverter<IMessageCreateDTO, MessageCreateDTO>(),
+                new JsonInterfaceToObjectConverter<IGetMessageDTO, GetMessageDTO>(),
+                new JsonInterfaceToObjectConverter<IGetMessagesDTO, GetMessagesDTO>(),
+                new JsonInterfaceToObjectConverter<ICreateMessageDTO, CreateMessageDTO>(),
+                new JsonInterfaceToObjectConverter<IAttachmentDTO, AttachmentDTO>(),
+                new JsonInterfaceToObjectConverter<IMessageEntities, MessageEntitiesDTO>(),
+
+                // Webhooks
+                new JsonInterfaceToObjectConverter<IWebhookDTO, WebhookDTO>(),
+                new JsonInterfaceToObjectConverter<IWebhookEnvironmentDTO, WebhookEnvironmentDTO>(),
+                new JsonInterfaceToObjectConverter<IGetAllWebhooksResultDTO, GetAllWebhooksResultDTO>(),
+                new JsonInterfaceToObjectConverter<IGetWebhookSubscriptionsCountResultDTO, GetWebhookSubscriptionsCountResultDTO>(),
+                new JsonInterfaceToObjectConverter<IWebhookSubscriptionDTO, WebhookSubscriptionDTO>(),
+                new JsonInterfaceToObjectConverter<IWebhookSubcriptionListDTO, WebhookSubcriptionListDTO>(),
+
+
+                // Enums (that have JSON serialization implemented)
+                new JsonEnumStringConverter<EventType>(),
+                new JsonEnumStringConverter<QuickReplyType>(),
+                new JsonEnumStringConverter<AttachmentType>(),
             };
 
             Converters = converters.ToArray();

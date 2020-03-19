@@ -185,6 +185,12 @@ namespace Tweetinvi.Logic
             get { return _tweetDTO.Truncated; }
         }
 
+        public int? ReplyCount
+        {
+            get { return _tweetDTO.ReplyCount; }
+            set { _tweetDTO.QuoteCount = value; }
+        }
+
         public long? InReplyToStatusId
         {
             get { return _tweetDTO.InReplyToStatusId; }
@@ -254,6 +260,12 @@ namespace Tweetinvi.Logic
             }
         }
 
+        public int? QuoteCount
+        {
+            get { return _tweetDTO.QuoteCount; }
+            set { _tweetDTO.QuoteCount = value; }
+        }
+
         public long? QuotedStatusId
         {
             get { return _tweetDTO.QuotedStatusId; }
@@ -283,7 +295,7 @@ namespace Tweetinvi.Logic
             get { return _tweetDTO.PossiblySensitive; }
         }
 
-        public Language Language
+        public Language? Language
         {
             get { return _tweetDTO.Language; }
         }

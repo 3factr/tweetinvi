@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <VersionPrefix>4.0.3</VersionPrefix>
+    <Copyright>Tweetinvi 2018</Copyright>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>../tweetinvi.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tweetinvi.Core\Tweetinvi.Core.csproj" />
+    <ProjectReference Include="..\Tweetinvi\Tweetinvi.csproj" />
+  </ItemGroup>
+
+</Project>
